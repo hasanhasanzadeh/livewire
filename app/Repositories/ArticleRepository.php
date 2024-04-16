@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 
-use App\Base\ServiceWrapper;
+use App\Base\LiveWireServiceWrapper;
 use App\Models\Article;
 
 class ArticleRepository implements InterfaceRepository
@@ -11,28 +11,28 @@ class ArticleRepository implements InterfaceRepository
 
     public function getAll(array $data = [])
     {
-        return app(ServiceWrapper::class)(function () use ($data) {
-            return Article::with('author')->latest()->paginate(10);
+        return app(LiveWireServiceWrapper::class)(function () use ($data) {
+            return Article::with('author')->latest()->get();
         }, transaction: false);
     }
 
     public function getById($id)
     {
-        return app(ServiceWrapper::class)(function () use ($id) {
+        return app(LiveWireServiceWrapper::class)(function () use ($id) {
             return Article::with('author')->findOrFail($id);
         }, transaction: false);
     }
 
     public function delete($id)
     {
-        return app(ServiceWrapper::class)(function () use ($id) {
+        return app(LiveWireServiceWrapper::class)(function () use ($id) {
             return Article::findOrFail($id)->delete();
         }, transaction: false);
     }
 
     public function store(array $data)
     {
-        return app(ServiceWrapper::class)(function () use ($data) {
+        return app(LiveWireServiceWrapper::class)(function () use ($data) {
             $article = auth()->user()->articles()->create($data);
             if ($data['image']) {
                 $path = str_replace('public', 'storage', $data['image']->store('public/articles'));
@@ -44,7 +44,7 @@ class ArticleRepository implements InterfaceRepository
 
     public function update($id, array $data)
     {
-        return app(ServiceWrapper::class)(function () use ($data, $id) {
+        return app(LiveWireServiceWrapper::class)(function () use ($data, $id) {
             $article = Article::findOrFail($id);
             $article->update($data);
             if ($data['image']) {
