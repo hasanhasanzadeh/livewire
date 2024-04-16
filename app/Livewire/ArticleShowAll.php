@@ -14,9 +14,9 @@ class ArticleShowAll extends Component
 
     public mixed $articles;
 
-    public function mount($articles): void
+    public function mount(): void
     {
-        $this->articles = $articles;
+        $this->articles = (new \App\Repositories\ArticleRepository)->getAll()->data->toArray();
     }
 
     public function render(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application

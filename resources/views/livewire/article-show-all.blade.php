@@ -1,7 +1,7 @@
 <div>
-    @foreach ($this->articles['data']['items'] as $article)
+    @foreach ($this->articles as $article)
         <div>
-            
+            {{$article['title']}}
         </div>
     @endforeach
 </div>

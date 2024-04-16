@@ -12,7 +12,7 @@ class ArticleRepository implements InterfaceRepository
     public function getAll(array $data = [])
     {
         return app(LiveWireServiceWrapper::class)(function () use ($data) {
-            return Article::with('author')->latest()->get();
+            return Article::with('author')->get();
         }, transaction: false);
     }
 

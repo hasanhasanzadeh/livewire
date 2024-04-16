@@ -1,11 +1,11 @@
 <?php
 
 
-use App\Http\Controllers\ArticleController;
+use App\Livewire\ArticleShowAll;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/articles', [ArticleController::class, 'index']);
+Route::get('/articles', ArticleShowAll::class);
