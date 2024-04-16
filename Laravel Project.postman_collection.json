@@ -1,0 +1,388 @@
+{
+	"info": {
+		"_postman_id": "3861cfd1-ad12-45fc-bf3f-26440f7c5d56",
+		"name": "Laravel Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18165901",
+		"_collection_link": "https://working-team.postman.co/workspace/ZhihatWorkspace~1d3e427a-2f6f-48d7-83c7-877caadad284/collection/18165901-3861cfd1-ad12-45fc-bf3f-26440f7c5d56?action=share&source=collection_link&creator=18165901"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "blackhatdeveloper.2019@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "hasan",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "hasanzadeh",
+							"type": "text"
+						},
+						{
+							"key": "mobile",
+							"value": "09142641978",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{current_url}}/api/v1/register",
+					"host": [
+						"{{current_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "blackhatdeveloper.2019@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{current_url}}/api/v1/login",
+					"host": [
+						"{{current_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Profile",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|6i2vmyc3NQ7YZsVTTbUIQDLQsbjqQSCQJvc3BWXZ392fe3f9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{current_url}}/api/v1/profile",
+					"host": [
+						"{{current_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Articles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{current_url}}/api/v1/articles",
+					"host": [
+						"{{current_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Article By Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{current_url}}/api/v1/articles/1",
+					"host": [
+						"{{current_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|6i2vmyc3NQ7YZsVTTbUIQDLQsbjqQSCQJvc3BWXZ392fe3f9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "this for test",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "this-test-for-free-yuty",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{current_url}}/api/v1/articles",
+					"host": [
+						"{{current_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|6i2vmyc3NQ7YZsVTTbUIQDLQsbjqQSCQJvc3BWXZ392fe3f9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "this for ffffffffffk",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "this-test-for-free-yuty",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{current_url}}/api/v1/articles/21",
+					"host": [
+						"{{current_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"21"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Article",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|6i2vmyc3NQ7YZsVTTbUIQDLQsbjqQSCQJvc3BWXZ392fe3f9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "this for ffffffffffk",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "this-test-for-free-yuty",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test this content for test ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{current_url}}/api/v1/articles/21",
+					"host": [
+						"{{current_url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"articles",
+						"21"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "current_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
